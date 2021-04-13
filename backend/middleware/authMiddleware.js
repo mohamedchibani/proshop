@@ -20,19 +20,26 @@ const protect = expressHandler(async (req, res, next) => {
             
             console.log(error)
             res.status(401)
-            throw new Error('Not autorized, token failed')
+            throw new Error('Not authorized, token failed')
         }
 
     }
 
     if(!token){
         res.status(401)
-        throw new Error('Not autorized, no token')
+        throw new Error('Not authorized, no token')
     }
-
-    
 
 })
 
+const admin = (req, res, next) => {
+    if(req.user && req.user.isAdmin){
+        next()
+    } else {
+        res.status(401)
+        throw new Error('Not authorized as admin')
+    }
+}
 
-export { protect }
+export { protect, admin }
+

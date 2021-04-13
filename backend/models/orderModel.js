@@ -55,12 +55,12 @@ const orderSchema = mongoose.Schema({
     paidAt: {
         type: Date,
     },
-    isDelivred: {
+    isDelivered: {
         type: Boolean,
         required: true,
         default: false
     },
-    delivredAt: {
+    deliveredAt: {
         type: Date,
     },
 }, {
