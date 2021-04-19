@@ -1,12 +1,12 @@
 import express from 'express'
 const router = express.Router()
 
-import { 
-    authUser, 
-    getUserProfile, 
-    registerUser, 
-    updateUserProfile, 
-    getUsers,  
+import {
+    authUser,
+    getUserProfile,
+    registerUser,
+    updateUserProfile,
+    getUsers,
     deleteUser,
     getUserById,
     updateUser
@@ -33,4 +33,3 @@ router
     .put(protect, admin, updateUser)
 
 export default router
-
